@@ -1,0 +1,13 @@
+SS(minidraw.standard.ImageManager.ss) = minidraw.standard.StandardDrawingView, standard.StdViewWithBackground, minidraw.standard.ImageManager, standard.ImageManager$1, minidraw.standard.AbstractFigure, standard.ImageFigure
+SS(minidraw.framework.DrawingChangeListener.ss) = minidraw.framework.DrawingChangeEvent, framework.DrawingChangeListener, framework.DrawingView, framework.DrawingChangeListenerHandler, minidraw.framework.DrawingChangeListener, framework.Drawing, standard.handlers.StandardDrawingChangeListenerHandler, minidraw.framework.DrawingChangeListenerHandler
+SS(minidraw.framework.Tool.ss) = minidraw.framework.Tool, standard.AbstractTool, standard.NullTool
+SS(standard.StandardDrawing.ss) = minidraw.framework.SelectionHandler, standard.handlers.StandardSelectionHandler, minidraw.standard.CompositeFigure, standard.GroupFigure, standard.StandardDrawing, minidraw.standard.handlers.StandardSelectionHandler, minidraw.standard.handlers.StandardDrawingChangeListenerHandler
+SS(boardgame.BoardDrawing.ss) = minidraw.boardgame.BoardFigure, boardgame.FigureFactory, minidraw.boardgame.PositioningStrategy, boardgame.BoardDrawing, minidraw.standard.StandardDrawing, minidraw.boardgame.BoardGameObserver, minidraw.boardgame.PropAppearanceStrategy, minidraw.boardgame.FigureFactory
+SS(boardgame.BoardActionTool.ss) = boardgame.BoardActionTool, minidraw.standard.AbstractTool
+SS(standard.handlers.SelectAreaTracker.ss) = standard.handlers.StandardRubberBandSelectionStrategy, minidraw.framework.RubberBandSelectionStrategy, minidraw.standard.handlers.StandardRubberBandSelectionStrategy, standard.handlers.SelectAreaTracker
+SS(minidraw.framework.Drawing.ss) = minidraw.framework.DrawingEditor, standard.handlers.DragTracker, standard.StandardDrawingView, framework.RubberBandSelectionStrategy, framework.DrawingChangeEvent, minidraw.framework.Drawing, minidraw.framework.DrawingView, framework.DrawingEditor, framework.Factory
+SS(minidraw.framework.Figure.ss) = minidraw.framework.Figure, standard.CompositeFigure, framework.SelectionHandler, framework.FigureChangeEvent
+SS(standard.SelectionTool.ss) = minidraw.standard.handlers.SelectAreaTracker, minidraw.standard.handlers.DragTracker, standard.SelectionTool, standard.MiniDrawApplication, minidraw.standard.NullTool, minidraw.framework.Factory
+SS(standard.ImageManager.ss) = minidraw.standard.ImageManager$1, standard.ImageManager
+SS(minidraw.framework.FigureChangeEvent.ss) = minidraw.framework.FigureChangeListener, framework.Figure, standard.AbstractFigure, framework.FigureChangeListener, minidraw.framework.FigureChangeEvent
+SS(boardgame.BoardFigure.ss) = minidraw.boardgame.Command, boardgame.NullCommand, minidraw.standard.ImageFigure, boardgame.BoardFigure

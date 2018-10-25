@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ODEM PUBLIC "-//PFSW//DTD ODEM 1.2" "http://pfsw.org/ODEM/schema/dtd/odem-1.2.dtd">
+
+<ODEM version="1">
+  <header>
+    <created-by>
+      <exporter version="1.2.0">org.pfsw.tools.cda.ext.export.xml.XmlFileODEMExporter</exporter>
+      <provider>Manfred Duchrow Consulting &amp; Software</provider>
+    </created-by>
+  </header>
+  <context name="New Workset">
+    <container name="/usagers2/gaboue/Desktop/LOG8430/henrikbaerbak-minidraw-f64464931ff1/bin/minidraw" classification="dir">
+      <namespace name="framework">
+        <type name="framework.Factory" classification="interface" visibility="public" isAbstract="yes">
+          <dependencies count="5">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="minidraw.framework.DrawingView" classification="uses" />
+            <depends-on name="minidraw.framework.DrawingEditor" classification="uses" />
+            <depends-on name="minidraw.framework.Drawing" classification="uses" />
+            <depends-on name="javax.swing.JTextField" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="framework.Drawing" classification="interface" visibility="public" isAbstract="yes">
+          <dependencies count="6">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="minidraw.framework.SelectionHandler" classification="extends" />
+            <depends-on name="minidraw.framework.FigureChangeListener" classification="extends" />
+            <depends-on name="minidraw.framework.DrawingChangeListenerHandler" classification="extends" />
+            <depends-on name="minidraw.framework.Figure" classification="uses" />
+            <depends-on name="java.util.Iterator" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="framework.DrawingChangeListener" classification="interface" visibility="public" isAbstract="yes">
+          <dependencies count="3">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="java.util.EventListener" classification="extends" />
+            <depends-on name="minidraw.framework.DrawingChangeEvent" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="framework.Tool" classification="interface" visibility="public" isAbstract="yes">
+          <dependencies count="3">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="java.awt.event.MouseEvent" classification="uses" />
+            <depends-on name="java.awt.event.KeyEvent" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="framework.SelectionHandler" classification="interface" visibility="public" isAbstract="yes">
+          <dependencies count="3">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="java.util.List" classification="uses" />
+            <depends-on name="minidraw.framework.Figure" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="framework.DrawingEditor" classification="interface" visibility="public" isAbstract="yes">
+          <dependencies count="5">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="java.lang.String" classification="uses" />
+            <depends-on name="minidraw.framework.Drawing" classification="uses" />
+            <depends-on name="minidraw.framework.DrawingView" classification="uses" />
+            <depends-on name="minidraw.framework.Tool" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="framework.FigureChangeListener" classification="interface" visibility="public" isAbstract="yes">
+          <dependencies count="3">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="java.util.EventListener" classification="extends" />
+            <depends-on name="minidraw.framework.FigureChangeEvent" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="framework.DrawingChangeListenerHandler" classification="interface" visibility="public" isAbstract="yes">
+          <dependencies count="2">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="minidraw.framework.DrawingChangeListener" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="framework.RubberBandSelectionStrategy" classification="interface" visibility="public" isAbstract="yes">
+          <dependencies count="3">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="minidraw.framework.Drawing" classification="uses" />
+            <depends-on name="java.awt.Rectangle" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="framework.Figure" classification="interface" visibility="public" isAbstract="yes">
+          <dependencies count="4">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="java.awt.Graphics" classification="uses" />
+            <depends-on name="java.awt.Rectangle" classification="uses" />
+            <depends-on name="minidraw.framework.FigureChangeListener" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="framework.DrawingChangeEvent" classification="class" visibility="public">
+          <dependencies count="4">
+            <depends-on name="java.util.EventObject" classification="extends" />
+            <depends-on name="java.awt.Rectangle" classification="uses" />
+            <depends-on name="minidraw.framework.Drawing" classification="uses" />
+            <depends-on name="java.lang.Object" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="framework.DrawingView" classification="interface" visibility="public" isAbstract="yes">
+          <dependencies count="3">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="minidraw.framework.DrawingChangeListener" classification="extends" />
+            <depends-on name="java.awt.Graphics" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="framework.FigureChangeEvent" classification="class" visibility="public">
+          <dependencies count="4">
+            <depends-on name="java.util.EventObject" classification="extends" />
+            <depends-on name="java.awt.Rectangle" classification="uses" />
+            <depends-on name="minidraw.framework.Figure" classification="uses" />
+            <depends-on name="java.lang.Object" classification="uses" />
+          </dependencies>
+        </type>
+      </namespace>
+      <namespace name="boardgame">
+        <type name="boardgame.NullCommand" classification="class" visibility="public">
+          <dependencies count="2">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="minidraw.boardgame.Command" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="boardgame.PropAppearanceStrategy" classification="interface" visibility="public" isAbstract="yes">
+          <dependencies count="2">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="java.lang.String" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="boardgame.BoardGameObserver" classification="interface" visibility="public" isAbstract="yes">
+          <dependencies count="2">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="java.lang.String" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="boardgame.BoardActionTool" classification="class" visibility="public">
+          <dependencies count="6">
+            <depends-on name="minidraw.standard.AbstractTool" classification="extends" />
+            <depends-on name="minidraw.boardgame.BoardFigure" classification="uses" />
+            <depends-on name="minidraw.framework.Figure" classification="uses" />
+            <depends-on name="minidraw.framework.DrawingEditor" classification="uses" />
+            <depends-on name="java.awt.event.MouseEvent" classification="uses" />
+            <depends-on name="minidraw.framework.Drawing" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="boardgame.BoardDrawing" classification="class" visibility="public">
+          <dependencies count="20">
+            <depends-on name="minidraw.standard.StandardDrawing" classification="extends" />
+            <depends-on name="minidraw.boardgame.BoardGameObserver" classification="uses" />
+            <depends-on name="java.util.Map" classification="uses" />
+            <depends-on name="java.util.List" classification="uses" />
+            <depends-on name="minidraw.boardgame.BoardFigure" classification="uses" />
+            <depends-on name="java.lang.String" classification="uses" />
+            <depends-on name="minidraw.boardgame.FigureFactory" classification="uses" />
+            <depends-on name="minidraw.boardgame.PositioningStrategy" classification="uses" />
+            <depends-on name="minidraw.boardgame.PropAppearanceStrategy" classification="uses" />
+            <depends-on name="java.lang.Object" classification="uses" />
+            <depends-on name="java.awt.Rectangle" classification="uses" />
+            <depends-on name="java.awt.Point" classification="uses" />
+            <depends-on name="java.util.Map$Entry" classification="uses" />
+            <depends-on name="minidraw.framework.Figure" classification="uses" />
+            <depends-on name="java.lang.RuntimeException" classification="uses" />
+            <depends-on name="java.util.Set" classification="uses" />
+            <depends-on name="java.util.Iterator" classification="uses" />
+            <depends-on name="java.util.HashMap" classification="uses" />
+            <depends-on name="java.lang.StringBuilder" classification="uses" />
+            <depends-on name="java.util.ArrayList" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="boardgame.FigureFactory" classification="interface" visibility="public" isAbstract="yes">
+          <dependencies count="5">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="java.util.Map" classification="uses" />
+            <depends-on name="java.util.List" classification="uses" />
+            <depends-on name="minidraw.boardgame.BoardFigure" classification="uses" />
+            <depends-on name="java.lang.String" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="boardgame.BoardFigure" classification="class" visibility="public">
+          <dependencies count="7">
+            <depends-on name="minidraw.standard.ImageFigure" classification="extends" />
+            <depends-on name="minidraw.boardgame.Command" classification="uses" />
+            <depends-on name="java.lang.String" classification="uses" />
+            <depends-on name="java.awt.Point" classification="uses" />
+            <depends-on name="java.awt.Image" classification="uses" />
+            <depends-on name="minidraw.standard.ImageManager" classification="uses" />
+            <depends-on name="java.lang.UnsupportedOperationException" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="boardgame.PositioningStrategy" classification="interface" visibility="public" isAbstract="yes">
+          <dependencies count="3">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="java.awt.Point" classification="uses" />
+            <depends-on name="java.lang.String" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="boardgame.Command" classification="interface" visibility="public" isAbstract="yes">
+          <dependencies count="1">
+            <depends-on name="java.lang.Object" classification="extends" />
+          </dependencies>
+        </type>
+      </namespace>
+      <namespace name="standard">
+        <type name="standard.GroupFigure" classification="class" visibility="public">
+          <dependencies count="6">
+            <depends-on name="minidraw.standard.CompositeFigure" classification="extends" />
+            <depends-on name="java.awt.Rectangle" classification="uses" />
+            <depends-on name="java.util.Iterator" classification="uses" />
+            <depends-on name="java.util.List" classification="uses" />
+            <depends-on name="java.lang.Object" classification="uses" />
+            <depends-on name="minidraw.framework.Figure" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="standard.StdViewWithBackground" classification="class" visibility="public">
+          <dependencies count="8">
+            <depends-on name="minidraw.standard.StandardDrawingView" classification="extends" />
+            <depends-on name="java.awt.Image" classification="uses" />
+            <depends-on name="minidraw.framework.DrawingEditor" classification="uses" />
+            <depends-on name="java.lang.String" classification="uses" />
+            <depends-on name="minidraw.standard.ImageManager" classification="uses" />
+            <depends-on name="java.awt.Graphics" classification="uses" />
+            <depends-on name="java.awt.Dimension" classification="uses" />
+            <depends-on name="java.awt.image.ImageObserver" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="standard.AbstractTool" classification="class" visibility="public" isAbstract="yes">
+          <dependencies count="5">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="minidraw.framework.Tool" classification="uses" />
+            <depends-on name="minidraw.framework.DrawingEditor" classification="uses" />
+            <depends-on name="java.awt.event.MouseEvent" classification="uses" />
+            <depends-on name="java.awt.event.KeyEvent" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="standard.StandardDrawingView" classification="class" visibility="public">
+          <dependencies count="23">
+            <depends-on name="javax.swing.JPanel" classification="extends" />
+            <depends-on name="minidraw.framework.DrawingView" classification="uses" />
+            <depends-on name="java.awt.event.MouseListener" classification="uses" />
+            <depends-on name="java.awt.event.MouseMotionListener" classification="uses" />
+            <depends-on name="java.awt.event.KeyListener" classification="uses" />
+            <depends-on name="minidraw.framework.DrawingEditor" classification="uses" />
+            <depends-on name="java.awt.Rectangle" classification="uses" />
+            <depends-on name="java.awt.Point" classification="uses" />
+            <depends-on name="java.awt.Dimension" classification="uses" />
+            <depends-on name="java.awt.Graphics" classification="uses" />
+            <depends-on name="minidraw.framework.Drawing" classification="uses" />
+            <depends-on name="java.util.Iterator" classification="uses" />
+            <depends-on name="minidraw.framework.Figure" classification="uses" />
+            <depends-on name="java.util.List" classification="uses" />
+            <depends-on name="java.awt.event.MouseEvent" classification="uses" />
+            <depends-on name="java.awt.event.KeyEvent" classification="uses" />
+            <depends-on name="minidraw.framework.DrawingChangeEvent" classification="uses" />
+            <depends-on name="java.lang.RuntimeException" classification="uses" />
+            <depends-on name="java.lang.String" classification="uses" />
+            <depends-on name="minidraw.framework.DrawingChangeListener" classification="uses" />
+            <depends-on name="java.lang.Object" classification="uses" />
+            <depends-on name="java.awt.Color" classification="uses" />
+            <depends-on name="minidraw.framework.Tool" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="standard.ImageManager$1" classification="class" visibility="default">
+          <dependencies count="5">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="java.io.FilenameFilter" classification="uses" />
+            <depends-on name="minidraw.standard.ImageManager" classification="uses" />
+            <depends-on name="java.io.File" classification="uses" />
+            <depends-on name="java.lang.String" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="standard.ImageManager" classification="class" visibility="public">
+          <dependencies count="16">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="java.lang.String" classification="uses" />
+            <depends-on name="java.net.URL" classification="uses" />
+            <depends-on name="java.awt.Component" classification="uses" />
+            <depends-on name="java.util.Map" classification="uses" />
+            <depends-on name="java.awt.Image" classification="uses" />
+            <depends-on name="java.io.IOException" classification="uses" />
+            <depends-on name="java.io.File" classification="uses" />
+            <depends-on name="java.io.FilenameFilter" classification="uses" />
+            <depends-on name="java.lang.RuntimeException" classification="uses" />
+            <depends-on name="java.lang.StringBuilder" classification="uses" />
+            <depends-on name="java.util.Hashtable" classification="uses" />
+            <depends-on name="minidraw.standard.ImageManager$1" classification="uses" />
+            <depends-on name="java.lang.Class" classification="uses" />
+            <depends-on name="javax.imageio.ImageIO" classification="uses" />
+            <depends-on name="java.awt.image.BufferedImage" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="standard.SelectionTool" classification="class" visibility="public">
+          <dependencies count="11">
+            <depends-on name="minidraw.standard.AbstractTool" classification="extends" />
+            <depends-on name="minidraw.framework.Tool" classification="uses" />
+            <depends-on name="minidraw.framework.Figure" classification="uses" />
+            <depends-on name="minidraw.framework.RubberBandSelectionStrategy" classification="uses" />
+            <depends-on name="minidraw.framework.DrawingEditor" classification="uses" />
+            <depends-on name="java.awt.event.MouseEvent" classification="uses" />
+            <depends-on name="minidraw.framework.Drawing" classification="uses" />
+            <depends-on name="minidraw.standard.handlers.StandardRubberBandSelectionStrategy" classification="uses" />
+            <depends-on name="minidraw.standard.NullTool" classification="uses" />
+            <depends-on name="minidraw.standard.handlers.DragTracker" classification="uses" />
+            <depends-on name="minidraw.standard.handlers.SelectAreaTracker" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="standard.AbstractFigure" classification="class" visibility="public" isAbstract="yes">
+          <dependencies count="8">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="minidraw.framework.Figure" classification="uses" />
+            <depends-on name="java.util.List" classification="uses" />
+            <depends-on name="minidraw.framework.FigureChangeListener" classification="uses" />
+            <depends-on name="java.awt.Rectangle" classification="uses" />
+            <depends-on name="minidraw.framework.FigureChangeEvent" classification="uses" />
+            <depends-on name="java.util.ArrayList" classification="uses" />
+            <depends-on name="java.util.Iterator" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="standard.StandardDrawing" classification="class" visibility="public">
+          <dependencies count="15">
+            <depends-on name="minidraw.standard.CompositeFigure" classification="extends" />
+            <depends-on name="minidraw.framework.Drawing" classification="uses" />
+            <depends-on name="minidraw.framework.SelectionHandler" classification="uses" />
+            <depends-on name="minidraw.standard.handlers.StandardDrawingChangeListenerHandler" classification="uses" />
+            <depends-on name="java.lang.Thread" classification="uses" />
+            <depends-on name="minidraw.framework.DrawingChangeListener" classification="uses" />
+            <depends-on name="minidraw.framework.FigureChangeEvent" classification="uses" />
+            <depends-on name="java.util.List" classification="uses" />
+            <depends-on name="minidraw.framework.Figure" classification="uses" />
+            <depends-on name="java.awt.Rectangle" classification="uses" />
+            <depends-on name="minidraw.standard.handlers.StandardSelectionHandler" classification="uses" />
+            <depends-on name="java.lang.RuntimeException" classification="uses" />
+            <depends-on name="java.lang.String" classification="uses" />
+            <depends-on name="java.lang.Object" classification="uses" />
+            <depends-on name="java.lang.InterruptedException" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="standard.NullTool" classification="class" visibility="public">
+          <dependencies count="4">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="minidraw.framework.Tool" classification="uses" />
+            <depends-on name="java.awt.event.MouseEvent" classification="uses" />
+            <depends-on name="java.awt.event.KeyEvent" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="standard.CompositeFigure" classification="class" visibility="public" isAbstract="yes">
+          <dependencies count="10">
+            <depends-on name="minidraw.standard.AbstractFigure" classification="extends" />
+            <depends-on name="minidraw.framework.FigureChangeListener" classification="uses" />
+            <depends-on name="java.util.List" classification="uses" />
+            <depends-on name="minidraw.framework.Figure" classification="uses" />
+            <depends-on name="java.util.Iterator" classification="uses" />
+            <depends-on name="java.awt.Graphics" classification="uses" />
+            <depends-on name="minidraw.framework.FigureChangeEvent" classification="uses" />
+            <depends-on name="java.util.ArrayList" classification="uses" />
+            <depends-on name="java.lang.Object" classification="uses" />
+            <depends-on name="java.awt.Rectangle" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="standard.MiniDrawApplication" classification="class" visibility="public">
+          <dependencies count="17">
+            <depends-on name="javax.swing.JFrame" classification="extends" />
+            <depends-on name="minidraw.framework.DrawingEditor" classification="uses" />
+            <depends-on name="minidraw.framework.DrawingView" classification="uses" />
+            <depends-on name="minidraw.framework.Drawing" classification="uses" />
+            <depends-on name="minidraw.standard.ImageManager" classification="uses" />
+            <depends-on name="minidraw.framework.Tool" classification="uses" />
+            <depends-on name="minidraw.framework.Factory" classification="uses" />
+            <depends-on name="javax.swing.JTextField" classification="uses" />
+            <depends-on name="java.lang.String" classification="uses" />
+            <depends-on name="java.awt.Container" classification="uses" />
+            <depends-on name="javax.swing.JPanel" classification="uses" />
+            <depends-on name="javax.swing.UIManager" classification="uses" />
+            <depends-on name="java.awt.Component" classification="uses" />
+            <depends-on name="minidraw.standard.NullTool" classification="uses" />
+            <depends-on name="java.lang.Exception" classification="uses" />
+            <depends-on name="java.awt.BorderLayout" classification="uses" />
+            <depends-on name="java.awt.LayoutManager" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="standard.ImageFigure" classification="class" visibility="public">
+          <dependencies count="8">
+            <depends-on name="minidraw.standard.AbstractFigure" classification="extends" />
+            <depends-on name="java.awt.Image" classification="uses" />
+            <depends-on name="java.awt.Rectangle" classification="uses" />
+            <depends-on name="java.awt.Point" classification="uses" />
+            <depends-on name="java.lang.String" classification="uses" />
+            <depends-on name="minidraw.standard.ImageManager" classification="uses" />
+            <depends-on name="java.awt.Graphics" classification="uses" />
+            <depends-on name="java.awt.image.ImageObserver" classification="uses" />
+          </dependencies>
+        </type>
+      </namespace>
+      <namespace name="standard.handlers">
+        <type name="standard.handlers.DragTracker" classification="class" visibility="public">
+          <dependencies count="10">
+            <depends-on name="minidraw.standard.AbstractTool" classification="extends" />
+            <depends-on name="minidraw.framework.Tool" classification="uses" />
+            <depends-on name="minidraw.framework.Figure" classification="uses" />
+            <depends-on name="minidraw.framework.DrawingEditor" classification="uses" />
+            <depends-on name="java.awt.event.MouseEvent" classification="uses" />
+            <depends-on name="minidraw.framework.Drawing" classification="uses" />
+            <depends-on name="java.awt.event.KeyEvent" classification="uses" />
+            <depends-on name="java.util.List" classification="uses" />
+            <depends-on name="java.lang.Object" classification="uses" />
+            <depends-on name="java.util.Iterator" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="standard.handlers.StandardRubberBandSelectionStrategy" classification="class" visibility="public">
+          <dependencies count="6">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="minidraw.framework.RubberBandSelectionStrategy" classification="uses" />
+            <depends-on name="minidraw.framework.Drawing" classification="uses" />
+            <depends-on name="java.awt.Rectangle" classification="uses" />
+            <depends-on name="java.util.Iterator" classification="uses" />
+            <depends-on name="minidraw.framework.Figure" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="standard.handlers.StandardSelectionHandler" classification="class" visibility="public">
+          <dependencies count="6">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="minidraw.framework.SelectionHandler" classification="uses" />
+            <depends-on name="java.util.List" classification="uses" />
+            <depends-on name="minidraw.framework.Figure" classification="uses" />
+            <depends-on name="java.util.ArrayList" classification="uses" />
+            <depends-on name="java.util.Iterator" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="standard.handlers.SelectAreaTracker" classification="class" visibility="public">
+          <dependencies count="11">
+            <depends-on name="minidraw.standard.AbstractTool" classification="extends" />
+            <depends-on name="java.awt.Rectangle" classification="uses" />
+            <depends-on name="minidraw.framework.RubberBandSelectionStrategy" classification="uses" />
+            <depends-on name="minidraw.framework.DrawingEditor" classification="uses" />
+            <depends-on name="java.awt.event.MouseEvent" classification="uses" />
+            <depends-on name="minidraw.framework.DrawingView" classification="uses" />
+            <depends-on name="java.awt.Graphics" classification="uses" />
+            <depends-on name="minidraw.standard.handlers.StandardRubberBandSelectionStrategy" classification="uses" />
+            <depends-on name="minidraw.framework.Drawing" classification="uses" />
+            <depends-on name="java.awt.Point" classification="uses" />
+            <depends-on name="java.awt.Color" classification="uses" />
+          </dependencies>
+        </type>
+        <type name="standard.handlers.StandardDrawingChangeListenerHandler" classification="class" visibility="public">
+          <dependencies count="9">
+            <depends-on name="java.lang.Object" classification="extends" />
+            <depends-on name="minidraw.framework.DrawingChangeListenerHandler" classification="uses" />
+            <depends-on name="java.util.List" classification="uses" />
+            <depends-on name="minidraw.framework.DrawingChangeListener" classification="uses" />
+            <depends-on name="minidraw.framework.Drawing" classification="uses" />
+            <depends-on name="java.awt.Rectangle" classification="uses" />
+            <depends-on name="java.util.ArrayList" classification="uses" />
+            <depends-on name="java.util.Iterator" classification="uses" />
+            <depends-on name="minidraw.framework.DrawingChangeEvent" classification="uses" />
+          </dependencies>
+        </type>
+      </namespace>
+    </container>
+  </context>
+</ODEM>
