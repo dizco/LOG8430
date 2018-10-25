@@ -5,6 +5,7 @@ gradle/
 out/
 *.iml
 classes/
+bin/
 
 *~
 *.log
