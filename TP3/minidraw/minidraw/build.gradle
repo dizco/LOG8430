@@ -1,0 +1,14 @@
+/*
+ * Build file for MiniDraw, by Henrik Baerbak Christensen.
+ */
+
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+
+}
+
