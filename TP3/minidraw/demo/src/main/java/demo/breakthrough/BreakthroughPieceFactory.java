@@ -2,7 +2,9 @@ package demo.breakthrough;
 
 import java.util.*;
 
-import minidraw.boardgame.*;
+import minidraw.framework.Drawing.BoardFigure;
+import minidraw.framework.Drawing.Command;
+import minidraw.framework.Drawing.FigureFactory;
 
 /**
  * The factory to generate all pieces.

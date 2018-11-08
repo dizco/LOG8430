@@ -2,8 +2,11 @@ package demo.visual;
 
 import java.awt.Point;
 
-import minidraw.framework.*;
-import minidraw.standard.*;
+import minidraw.framework.Drawing.DrawingEditor;
+import minidraw.framework.Drawing.ImageFigure;
+import minidraw.framework.Drawing.MiniDrawApplication;
+import minidraw.framework.Drawing.SelectionTool;
+import minidraw.framework.Figure.Figure;
 
 /**
  * Test that figures can be added to the drawing and that the selection tool

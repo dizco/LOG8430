@@ -5,8 +5,8 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-import minidraw.framework.*;
-import minidraw.standard.*;
+import minidraw.framework.Drawing.*;
+import minidraw.framework.Figure.AbstractFigure;
 
 /**
  * Demonstrate MiniDraw ability to: A) Handle multiple windows B) Define new

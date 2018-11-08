@@ -2,7 +2,7 @@ package demo.visual;
 
 import javax.swing.JTextField;
 
-import minidraw.framework.DrawingEditor;
+import minidraw.framework.Drawing.DrawingEditor;
 
 /**
  * A factory that creates the status line as well.
