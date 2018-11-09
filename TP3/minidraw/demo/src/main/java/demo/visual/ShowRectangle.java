@@ -1,4 +1,4 @@
-package minidraw.visual;
+package demo.visual;
 
 import java.awt.*;
 import java.awt.event.*;
