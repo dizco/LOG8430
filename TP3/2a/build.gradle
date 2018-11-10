@@ -1,0 +1,7 @@
+/*
+ * Root build file, to get latest gradle wrapper
+ */
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.6'
+}

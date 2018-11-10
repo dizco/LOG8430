@@ -1,0 +1,99 @@
+/*
+ * Build file for MiniDraw Demo applications, by Henrik Baerbak Christensen.
+ */
+
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+  compile project(':minidraw')
+}
+
+// === Visual Testing of individual MiniDraw features
+
+task background(type: JavaExec) {
+  group 'Testing'
+  description 'Just show a background image.'
+
+  classpath sourceSets.test.runtimeClasspath
+  main = 'demo.visual.ShowBackground'
+}
+
+task figures(type: JavaExec) {
+  group 'Testing'
+  description 'ImageFigures and SelectionTool.'
+
+  classpath sourceSets.test.runtimeClasspath
+  main = 'demo.visual.ShowFigures'
+}
+
+task composite(type: JavaExec) {
+  group 'Testing'
+  description 'Composite figure testing.'
+
+  classpath sourceSets.test.runtimeClasspath
+  main = 'demo.visual.ShowCompositeFigure'
+}
+
+task multiview(type: JavaExec) {
+  group 'Testing'
+  description 'Multiple views.'
+
+  classpath sourceSets.test.runtimeClasspath
+  main = 'demo.visual.MultiView'
+}
+
+task add(type: JavaExec) {
+  group 'Testing'
+  description 'Add and remove figures, show custom tool.'
+
+  classpath sourceSets.test.runtimeClasspath
+  main = 'demo.visual.AddRemoveFigures'
+}
+
+task message(type: JavaExec) {
+  group 'Testing'
+  description 'Show messages in status field.'
+
+  classpath sourceSets.test.runtimeClasspath
+  main = 'demo.visual.ShowMessage'
+}
+
+task key(type: JavaExec) {
+  group 'Testing'
+  description 'Show key events in status field'
+
+  classpath sourceSets.test.runtimeClasspath
+  main = 'demo.visual.KeyShow'
+}
+
+// === Demonstration of complex MiniDraw features
+
+task puzzle(type: JavaExec) {
+  group 'demo'
+  description 'Simple jigsaw puzzle.'
+
+  classpath sourceSets.test.runtimeClasspath
+  main = 'minidraw.visual.LogoPuzzle'
+}
+
+task rect(type: JavaExec) {
+  group 'demo'
+  description 'Rectangle demo.'
+
+  classpath sourceSets.test.runtimeClasspath
+  main = 'minidraw.visual.ShowRectangle'
+}
+
+// === Experimental features - BoardGame extension
+
+task breakthrough(type: JavaExec) {
+  group 'experimental'
+  description 'Demo boardgame package in MiniDraw.'
+
+  classpath sourceSets.test.runtimeClasspath
+  main = 'demo.breakthrough.BreakThrough'
+}
