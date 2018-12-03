@@ -81,7 +81,7 @@ cp spark-env.sh /usr/local/spark-2.3.1-bin-hadoop2.7/conf/
 ### Run server
 Running this command will start the flask API as well as start the Spark master.
 ```
-python ./serv.py
+python ./server.py
 ```
 
 ### Start Spark slaves
