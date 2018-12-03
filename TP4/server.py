@@ -44,19 +44,21 @@ def create_receipt():
 def get_receipts():
     df = spark.read.format("com.mongodb.spark.sql.DefaultSource") \
         .load()
-    transaction = df.groupBy("_id") \
-            .agg(PysparkFunctions.collect_list("items.name").alias("itemName")) \
-            .rdd \
-            .flatMap(lambda x: x.itemName)
-    transaction.collect()
-
-    model = FPGrowth.train(transaction, minSupport=0.2, numPartitions=10)
-    result = model.freqItemsets().collect()
 
     response = []
 
-    for r in result:
-        response.append({'item': r.items, 'freq': r.freq})
+    if (df.count() != 0):
+        transaction = df.groupBy("_id") \
+            .agg(PysparkFunctions.collect_list("items.name").alias("itemName")) \
+            .rdd \
+            .flatMap(lambda x: x.itemName)
+        transaction.collect()
+
+        model = FPGrowth.train(transaction, minSupport=0.2, numPartitions=10)
+        result = model.freqItemsets().collect()
+
+        for r in result:
+            response.append({'item': r.items, 'freq': r.freq})
 
     return jsonify(response)
 
