@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, abort, request, jsonify
 import pyspark
 from pyspark.mllib.fpm import FPGrowth
 from pyspark.sql import SparkSession, functions as PysparkFunctions
