@@ -3,6 +3,9 @@
 ## What is this?
 This project was built to experiment with Spark configurations. It demoes a simple API where you can add receipts, and subsequently query for the most frequent items in the receipts. The objective was to leverage the load balancing capabilities of using a Spark cluster. Although we didn't manage to deploy a cluster on multiple Virtual Machines, we experimented with the configurations on a single VM.
 
+## Demo
+View a demo video [here](https://youtu.be/CxD-PIUVOQg).
+
 ## Getting started
 ### Install Ubuntu
 1. Download [Ubuntu 18.04.1](https://www.ubuntu.com/download/desktop)
