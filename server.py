@@ -1,11 +1,24 @@
-from flask import Flask, jsonify
+from flask import Flask, request, jsonify
+import pyspark
+from pyspark.mllib.fpm import FPGrowth
+from pyspark.sql import SparkSession, functions as PysparkFunctions
+from pymongo import MongoClient
 
 app = Flask(__name__)
 
 LOCALHOST_URL = '127.0.0.1'
 
-client = MongoClient("mongodb://" + LOCALHOST_URL + ":27017/store" )
+client = MongoClient("mongodb://" + LOCALHOST_URL + ":27017/shop" )
 db = client['shop'] 
+
+'''
+db.receipts.insert_one({
+    "items": [
+        {"name": "Carotte", "Price": 3.0},
+        {"name": "Epice", "Price": 5.0}
+    ]
+})
+'''
 
 spark = SparkSession \
             .builder \
@@ -32,7 +45,7 @@ def get_receipts():
     df = spark.read.format("com.mongodb.spark.sql.DefaultSource") \
         .load()
     transaction = df.groupBy("_id") \
-            .agg(PysparkF.collect_list("items.name").alias("itemName")) \
+            .agg(PysparkFunctions.collect_list("items.name").alias("itemName")) \
             .rdd \
             .flatMap(lambda x: x.itemName)
     transaction.collect()
@@ -40,7 +53,12 @@ def get_receipts():
     model = FPGrowth.train(transaction, minSupport=0.2, numPartitions=10)
     result = model.freqItemsets().collect()
 
-    return jsonify({'receipts': result})
+    response = []
+
+    for r in result:
+        response.append({'item': r.items, 'freq': r.freq})
+
+    return jsonify(response)
 
 if __name__ == '__main__':
     app.run(debug=True)
