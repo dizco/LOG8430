@@ -2,6 +2,19 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
+LOCALHOST_URL = '127.0.0.1'
+
+client = MongoClient("mongodb://" + LOCALHOST_URL + ":27017/store" )
+db = client['shop'] 
+
+spark = SparkSession \
+            .builder \
+            .appName("log8430") \
+            .master("local") \
+            .config("spark.mongodb.input.uri", "mongodb://" + LOCALHOST_URL + "/shop.receipts") \
+            .config("spark.jars.packages", "org.mongodb.spark:mongo-spark-connector_2.11:2.2.5") \
+            .getOrCreate()
+
 @app.route('/')
 def index():
     return "Hello, World!"
@@ -18,17 +31,16 @@ def create_receipt():
 def get_receipts():
     df = spark.read.format("com.mongodb.spark.sql.DefaultSource") \
         .load()
-    trans = df.groupBy("_id") \
+    transaction = df.groupBy("_id") \
             .agg(PysparkF.collect_list("items.name").alias("itemName")) \
             .rdd \
             .flatMap(lambda x: x.itemName)
-    trans.collect()
+    transaction.collect()
 
-    model = FPGrowth.train(trans, minSupport=0.2, numPartitions=10)
+    model = FPGrowth.train(transaction, minSupport=0.2, numPartitions=10)
     result = model.freqItemsets().collect()
 
     return jsonify({'receipts': result})
-
 
 if __name__ == '__main__':
     app.run(debug=True)
