@@ -1,7 +1,9 @@
 # LOG8430-TP4
 
 ## What is this?
-This project was built to experiment with Spark configurations. It demoes a simple API where you can add receipts, and subsequently query for the most frequent items in the receipts. The objective was to leverage the load balancing capabilities of using a Spark cluster. Although we didn't manage to deploy a cluster on multiple Virtual Machines, we experimented with the configurations on a single VM.
+This project was built to experiment with Spark configurations. It demoes a simple API where you can add receipts, and subsequently query for the most frequent items in the receipts. The objective was to leverage the load balancing capabilities of using a Spark cluster. Although we didn't manage to deploy a cluster on multiple Virtual Machines, we experimented with the configurations on a single VM. We made this choice due to the material and temporal constraints.
+
+We choose to use python and mongodb because some members of our group have better skills with this software than with java or Cassandra, that none of us knews. Because we don't use java, we didn't need Tomcat.
 
 ## Demo
 View a demo video [here](https://youtu.be/CxD-PIUVOQg).
